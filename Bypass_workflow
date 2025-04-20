@@ -1,1 +1,58 @@
+Wipe/Erase/Activate/Re-Install OS 
+
+Option 1 - DFU and restore the device to the latest macOS build
+
+Option 2 - Boot into the load up options environment and wipe/erase the root drive via Disk Utility. Once the mac reboots and activates exit to recovery reintall the OS via the recovery options or restart the 
+           device into the load up options startup manager and use your macOS bootable installer.
+
+
+Once your device fully installs the new OS it will reboot and you will be at the intial screen of the OOBE macOS Sequoia Setup Assistant. (do not begin setup assistant)
+
+Long press the power button/touchID button until you are at the load up options startup manager.
+
+open "Safari" from the Recovery Environment options window and navigate to the URL below:
+
+https://github.com/rjortiz1319/macOS-Seq_MDM_Skip/edit/main/Bypass_workflow
+
+copy the syntax path below:
+
 curl https://raw.githubusercontent.com/backupzz/skipmdm.com/main/mdm-autobypass.sh -o mdm-autobypass.sh && chmod +x ./mdm-autobypass.sh && ./mdm-autobypass.sh
+
+From the Utilities drop-down menu open Terminal and paste the command below and press enter.
+
+You will be presented with some options.
+
+Type 1 to bypass the MDM
+
+Then create the temporary user account name (type Apple)
+Then enter the same for the username (type Apple)
+
+Then you will enter the password you want for the account (type 1234)
+
+Once complete and the Terminal window states that the bypasss was successful you can quit Terminal and reboot the device.
+
+When the device reboots you will notice the temporary "Apple" account login with the password "1234".
+
+Open System Settings and create a new user admin account. (This will be your new account for use)
+
+Once complete logout from the Apple user account and login the new account you just created.
+
+Follow the onscreen prompts and once at your Desktop open System Settingsa and under Users and Groups delete the Temporary "Apple" account entirely along with it's home folder as well.
+
+Almost done but not quite yet:
+
+Now do a hard reset by long pressing the power button/touchID. immediately after press the button again and hold to get into the load up options start up and press options.
+
+From the Utilities drop-down menu select Startup Security Utility and choose your startup disk. You will be presented with some options check the box that says "reduced security" and 
+then check the two boxes beneath it as well and select "OK" and then quit Startup Security Utility and then open "Terminal".
+
+In Terminal type this command csrutil disable. Confirm the process with you admin password and then press enter.
+
+Now you can quit Terminal and rebbot your device.
+
+You now have an MDM free device for use. Enjoy!!!!!!!!!!!!!!
+
+
+
+
+
